@@ -4,6 +4,8 @@ Prueba técnica de Frontend Developer — Aeroméxico.
 
 Aplicación para explorar personajes de Rick & Morty con búsqueda en tiempo real, navegación paginada, sistema de favoritos persistente y estados visuales por status del personaje.
 
+Pueden darle un pequeño vistazo ya montado en Vercel: https://rick-morty-exam.vercel.app/
+
 ---
 
 ## Stack tecnológico
