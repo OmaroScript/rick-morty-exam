@@ -1,0 +1,50 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  color: var(--neon-green);
+  pointer-events: none;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal), color var(--transition-normal);
+  filter: drop-shadow(0 0 4px var(--neon-green-glow));
+}
+
+.input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1.5px solid rgba(151, 206, 76, 0.45);
+  border-radius: 10px;
+  padding: 11px 16px 11px 40px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: 
+    border-color var(--transition-normal), 
+    box-shadow var(--transition-normal), 
+    background var(--transition-normal);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--neon-green);
+  box-shadow: 
+    0 0 0 1px var(--neon-green), 
+    0 0 15px var(--neon-green-glow);
+}
+
+.wrapper:focus-within .icon {
+  color: var(--neon-green);
+  transform: scale(1.1);
+}

@@ -1,0 +1,126 @@
+.card {
+  background: #1e2126;
+  border: 2px solid #2e333b;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+  outline: none;
+}
+
+.card:hover {
+  background: #242830;
+  border-color: rgba(151, 206, 76, 0.35);
+}
+
+.card:focus-visible {
+  border-color: var(--neon-green);
+}
+
+.selected {
+  background: #1e2126;
+  border-color: var(--neon-green);
+  box-shadow: 0 0 0 1px var(--neon-green);
+}
+
+.selected:hover {
+  border-color: var(--neon-green);
+}
+
+.name {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.2;
+  transition: color var(--transition-normal);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover .name {
+  color: var(--neon-green);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 1;
+  min-height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color var(--transition-normal);
+}
+
+.card:hover .imageWrapper {
+  border-color: rgba(151, 206, 76, 0.35);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+.likeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  width: 100%;
+  transition: 
+    color var(--transition-normal), 
+    background var(--transition-normal), 
+    border-color var(--transition-normal),
+    transform 0.2s var(--ease-elastic);
+}
+
+.likeButton svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.likeButton:hover {
+  color: var(--dead-red);
+  background: rgba(231, 76, 60, 0.08);
+  border-color: rgba(231, 76, 60, 0.35);
+}
+
+.likeButton:active {
+  transform: scale(0.92);
+}
+
+.liked {
+  color: var(--dead-red);
+  background: rgba(231, 76, 60, 0.12);
+  border-color: rgba(231, 76, 60, 0.45);
+  box-shadow: 0 0 10px var(--dead-red-glow);
+}
+
+.liked:hover {
+  background: rgba(231, 76, 60, 0.18);
+  border-color: rgba(231, 76, 60, 0.6);
+}
+

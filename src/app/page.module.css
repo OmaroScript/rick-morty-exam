@@ -1,0 +1,202 @@
+.main {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 100px;
+  overflow: hidden;
+
+  background-color: var(--space-dark);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(151, 206, 76, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(30, 200, 180, 0.06) 0%, transparent 45%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.45) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px);
+  background-size: 100% 100%, 100% 100%, 80px 80px, 180px 180px;
+  background-position: 0 0, 0 0, 0 0, 90px 90px;
+  animation: cosmicMovement 25s ease-in-out infinite alternate;
+}
+
+@keyframes cosmicMovement {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0px 0px, 90px 90px;
+  }
+  100% {
+    background-position: 5% 8%, -5% -8%, 30px -30px, 120px 20px;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 24px;
+  right: 40px;
+  font-family: var(--font-bangers), 'Bangers', cursive;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  letter-spacing: 3px;
+  color: #f5e642;
+  text-shadow:
+    3px 3px 0 #2d6a2d,
+    -2px -2px 0 #2d6a2d,
+    2px -2px 0 #2d6a2d,
+    -2px 2px 0 #2d6a2d,
+    0 8px 24px rgba(151, 206, 76, 0.4);
+  animation: floatLogo 4s ease-in-out infinite;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+@keyframes floatLogo {
+  0%, 100% {
+    transform: rotate(-2deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-1.5deg) translateY(-5px);
+  }
+}
+
+.logoAnd {
+  color: var(--neon-green);
+  text-shadow:
+    3px 3px 0 #1b451b,
+    -2px -2px 0 #1b451b,
+    2px -2px 0 #1b451b,
+    -2px 2px 0 #1b451b,
+    0 0 15px var(--neon-green-glow);
+  margin: 0 4px;
+}
+
+.appCard {
+  display: flex;
+  width: 100%;
+  max-width: 1060px;
+  height: clamp(480px, 70vh, 620px);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.75),
+    inset 0 0 100px rgba(255, 255, 255, 0.01);
+  position: relative;
+  z-index: 2;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 16px 0;
+  background: rgba(18, 22, 28, 0.7);
+  min-width: 0;
+  overflow: visible;
+  border-left: 1px solid var(--glass-border);
+}
+
+.gridWrapper {
+  flex: 1;
+  min-height: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrowTop {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrowBottom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.loadingState {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3.5px solid rgba(151, 206, 76, 0.15);
+  border-top-color: var(--neon-green);
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+  box-shadow: 0 0 15px var(--neon-green-glow);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.grass {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 128px;
+  background: linear-gradient(180deg, var(--neon-green) 0%, #3d8a1a 100%);
+  opacity: 0.9;
+  box-shadow: 0 -5px 35px var(--neon-green-glow);
+  z-index: 0;
+  clip-path: ellipse(65% 75% at 50% 100%);
+}
+
+.rickMortyArt {
+  position: fixed;
+  bottom: 0;
+  left: clamp(0px, 4vw, 80px);
+  height: clamp(180px, 28vh, 320px);
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 85px 12px 80px;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    top: 12px;
+    right: 12px;
+    font-size: 1.8rem;
+  }
+
+  .appCard {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .rightPanel {
+    padding: 18px 14px;
+    border-left: none;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  .grass {
+    height: 45px;
+    clip-path: ellipse(75% 75% at 50% 100%);
+  }
+
+  .rickMortyArt {
+    display: none;
+  }
+}
+
