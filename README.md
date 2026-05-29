@@ -29,7 +29,7 @@ Aplicación para explorar personajes de Rick & Morty con búsqueda en tiempo rea
 
 ```bash
 # 1. Clonar el repo e instalar dependencias
-git clone <url-del-repo>
+git clone git@github.com:OmaroScript/rick-morty-exam.git
 cd rick-morty-exam
 npm install
 
